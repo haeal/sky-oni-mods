@@ -78,7 +78,7 @@ namespace Drains
             go.AddOrGet<Storage>().capacityKg = 1f;
             var elementConsumer = go.AddOrGet<ElementConsumer>();
             elementConsumer.configuration = ElementConsumer.Configuration.AllLiquid;
-            elementConsumer.consumptionRate = 0.1f;
+            elementConsumer.consumptionRate = DrainOptions.Instance.DrainSize < 0.1f ? 0.1f : DrainOptions.Instance.DrainSize;
             elementConsumer.storeOnConsume = true;
             elementConsumer.showInStatusPanel = false;
             elementConsumer.consumptionRadius = 1;
